@@ -1,0 +1,153 @@
+.catalog__content {
+  display: grid;
+  column-gap: 48px;
+  row-gap: 46px;
+  padding: 50px 0 72px;
+  justify-content: center;
+
+  @media (min-width: 300px) {
+    grid-template-columns: repeat(1, 200px);
+    grid-template-rows: repeat(2, 408px);
+  }
+
+  @media (min-width: 488px) {
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 408px);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(2, 408px);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(2, 408px);
+  }
+}
+
+.card {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+
+  background: $white;
+  flex-direction: column;
+  width: 200px;
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid $color-border-card;
+  transition: transform $animation-timing;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &__text {
+    color: $main-accent;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    margin: auto;
+    margin-bottom: 4px;
+    width: 166px;
+    display: flex;
+    transition-duration: $animation-timing;
+  }
+
+  &__image {
+    display: flex;
+    width: 160px;
+    height: 134px;
+    margin: 32px auto 40px;
+  }
+
+  &__code {
+    width: 98px;
+    display: flex;
+    color: $secondary;
+    margin-bottom: 16px;
+    margin-left: 16px;
+  }
+
+  &__review {
+    width: 166px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto 16px 24px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 16px;
+    width: 166px;
+  }
+
+  &__button {
+    width: 166px;
+    height: 40px;
+    margin: auto;
+    margin-bottom: 16px;
+
+    border-radius: 5px;
+    background-color: $header-second-color;
+
+    color: $white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    transition-duration: $animation-timing;
+
+    &:hover {
+      border: 1px solid $header-second-color;
+      background-color: $white;
+      color: $header-second-color;
+    }
+  }
+}
+
+.card:hover .card__text {
+  color: #34568b;
+}
+
+.review-text {
+  display: flex;
+}
+
+.price-text {
+  color: $secondary;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.price-amount {
+  text-align: right;
+  color: $main-accent;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.stars {
+  margin: 0;
+  display: flex;
+  width: 96px;
+
+  &__star {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+    background-image: url(../images/star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.stars--4 :nth-child(-n + 4) {
+  background-image: url(../images/star-active.svg);
+}
